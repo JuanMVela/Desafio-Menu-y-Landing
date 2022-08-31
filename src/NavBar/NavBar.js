@@ -1,6 +1,6 @@
 import React from 'react';
 import './NavBar.css';
-import CardWidget from '../components/CardWidget/index';
+import CardWidget from '../components/CardWidget';
 
 
 

@@ -3,15 +3,23 @@ import './App.css';
 
 // COMPONENTES
 import ItemListContainer from './components/ItemListContainer';
-import NavBar from './components/NavBar';
+import NavBar from './NavBar/NavBar';
+import ItemCounts from './components/ItemCounts/ItemCounts';
+
 
 
 function App (){
-  return(  
+  
+  return(
+      
       
     <div className='App'>
       <NavBar/>
-      <ItemListContainer/>     
+      <ItemListContainer/>
+      <ItemCounts/>
+      
+      
+     
     </div>
     
   )
