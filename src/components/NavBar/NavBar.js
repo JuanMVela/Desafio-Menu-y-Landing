@@ -1,6 +1,8 @@
 import React from 'react';
 import './NavBar.css';
-import CardWidget from '../components/CardWidget';
+
+// COMPONENTES
+import CardWidget from "../CardWidget/CardWidget"
 
 
 

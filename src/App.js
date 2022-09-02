@@ -2,9 +2,8 @@ import React from 'react';
 import './App.css';
 
 // COMPONENTES
-import ItemListContainer from './components/ItemListContainer';
-import NavBar from './NavBar/NavBar';
-import ItemCounts from './components/ItemCounts/ItemCounts';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import NavBar from './components/NavBar/NavBar';
 
 
 
@@ -16,11 +15,7 @@ function App (){
     <div className='App'>
       <NavBar/>
       <ItemListContainer/>
-      <ItemCounts/>
-      
-      
-      
-     
+    
     </div>
     
   )

@@ -1,0 +1,9 @@
+.Cards-Container {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin-top: 20px;
+	justify-content: center;
+	background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgb(43, 38, 136) 0%, rgb(48, 58, 56) 35%, rgb(0, 11, 14) 100%); 
+}

@@ -12,3 +12,27 @@ root.render(
 );
 
 
+//     fetch('https://jsonplaceholder.typicode.com/todos/1')
+//   .then(response => response.json())
+//   .then(json => console.log(json))
+
+
+// fetch('https://jsonplaceholder.typicode.com/users')
+// .then(response => response.json())
+// .then(data => console.log(data))
+
+
+
+// const items = [
+//   {name: "bici", precio: 500},
+//   {name: "moto", precio: 800}
+// ];
+
+// const itemsNames = items.map((item) =>{
+  
+//   return `Nombre: ${item.name} - Precio:${item.precio}`;
+// })
+
+// console.log(itemsNames)
+
+

@@ -33,13 +33,12 @@ const ItemCounts = () => {
 
         return (
     
-         <div className='CounterSection'>
-            <h1>Desafio Contador</h1>             
-            <p>Contador : {counter}</p>                               
+         <div className='CounterSection'>                       
+            <p>Cantidad : {counter}</p>                               
              <div className="btn-section">
-              <button onClick={aumentar}> Aumentar </button>
-              <button onClick={restar}> Restar </button>
-              <button onClick={agregarCantidad}> agregar </button>
+              <button className='btn' onClick={aumentar}> + </button>
+              <button className='btn' onClick={restar}> - </button>
+              <button className='btn' onClick={agregarCantidad}> agregar </button>
              </div>          
         </div>           
              
