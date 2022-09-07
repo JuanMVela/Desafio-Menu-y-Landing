@@ -28,7 +28,7 @@ const Item = ({ data,img,description,plataform }) => {
         </Typography>
       </CardContent>
       <CardActions className='card'>
-        <p>{plataform}</p>        
+        <p>{plataform}</p>               
         <ItemCounts/>
       </CardActions>
       
