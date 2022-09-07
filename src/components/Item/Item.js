@@ -16,7 +16,7 @@ const Item = ({ data,img,description,plataform }) => {
       <CardMedia
         component="img"
         alt="green iguana"
-        height="140"
+        height="200"
         image={img}
       />
       <CardContent>
@@ -28,7 +28,8 @@ const Item = ({ data,img,description,plataform }) => {
         </Typography>
       </CardContent>
       <CardActions className='card'>
-        <p>{plataform}</p>        
+        <p>{plataform}</p>
+        <p>$ 1.800</p>          
         <ItemCounts/>
       </CardActions>
       
