@@ -1,22 +1,36 @@
-import React from 'react'
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import ItemCounts from '../ItemCounts/ItemCounts';
 
-// COMPONENTES
-import Item from '../Item/Item';
 
-const ItemDetail = ({games, loading}) => {
-    const array = games.splice(0,1);
-    return(
-    <div>{loading}
-      
-    {array.map((games) => {
-      return <Item
-       key={games.id}
-       data={games.title}
-       img={games.thumbnail}
-       description={games.short_description}
-       plataform={games.platform}/>;
-      })}
-      </div>)
-}
+const ItemDetail = ({products}) => {
+ 
+  return(<Card sx={{ maxWidth: 400, margin: 10}}>
+    <CardMedia
+      component="img"
+      alt="green iguana"
+      height="600"
+      image={products.image}
+    />
+    <CardContent>
+      <Typography gutterBottom variant="h5" component="div">
+        {products.title}
+      </Typography>
+      <Typography variant="body2" color="text.secondary">
+        {products.description}
+      </Typography>
+    </CardContent>
+    <CardActions className='card'>
+      <p>${products.price}</p>                 
+      <ItemCounts/>
+    </CardActions>
+    
+  </Card>
+ 
+)}
 
 export default ItemDetail

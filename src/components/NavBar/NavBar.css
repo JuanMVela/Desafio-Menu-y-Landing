@@ -3,15 +3,16 @@
     padding: 0; }
 
 nav{
-    background-color: black;    
+    background-color: rgb(194, 14, 14);    
 }
 
 .menu {
     list-style: none;
     display: flex;
     justify-content: space-evenly;
-    margin-top: 30px; }
-    .menu li {
+    align-items: center;   
+    padding: 20px; }
+    /* .menu li {
       display: inline-block;
       
       padding: 16px; }
@@ -25,4 +26,20 @@ nav{
           color: rgb(255, 0, 0);
           font-weight: bold;
           text-decoration: underline;
-          font-size: 20px; }
+          font-size: 20px; } */
+
+.Link{
+  color: black;     
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;  
+}
+
+.Link:hover {
+  color:rgb(255, 255, 255);
+   }
+img{
+  width: 30px;
+  height: 30px;
+}

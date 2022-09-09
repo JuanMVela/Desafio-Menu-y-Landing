@@ -1,6 +1,7 @@
 .App {
 	font-family: sans-serif;
-	text-align: center;	
+	text-align: center;
+	color: black;
   }
 
 .UserSection {
@@ -39,4 +40,6 @@
 	margin: 2px;
 	/* border: 2px solid white; */
 }
+
+
 

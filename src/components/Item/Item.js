@@ -4,33 +4,30 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import ItemCounts from '../ItemCounts/ItemCounts';
+
 
 import './Item.css'
 
 
 
-const Item = ({ data,img,description,plataform }) => {
+const Item = ({ data }) => {
   return (
-    <Card sx={{ maxWidth: 600, margin: 10}}>
+    <Card sx={{ maxWidth: 400, margin: 10}}>
       <CardMedia
         component="img"
-        alt="green iguana"
-        height="200"
-        image={img}
+        alt="green iguana"              
+        image={data.image}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {data}
+          {data.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {description}
+          {data.description}
         </Typography>
       </CardContent>
       <CardActions className='card'>
-        <p>{plataform}</p>
-        <p>$ 1.800</p>          
-        <ItemCounts/>
+        <p>${data.price}</p>                
       </CardActions>
       
     </Card>

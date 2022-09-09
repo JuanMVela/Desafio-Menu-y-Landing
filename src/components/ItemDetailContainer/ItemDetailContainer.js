@@ -4,38 +4,31 @@ import "./ItemDetailContainer.css"
 // COMPONENTES
 
 import ItemDetail from '../ItemDetail/ItemDetail';
-
+import { useParams } from "react-router"
 
 const ItemDetailContainer = () => {
-    const[games, setGames] = useState([]);
-  const[loading, setLoading] = useState(true);
+    const[products, setProducts] = useState([]);
 
+  let {id} = useParams()
+  console.log(id)
     
     useEffect(() => {
 
-      setTimeout (() => {
-      const options = {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key': '5f046da89amsh280e0123a3abaf0p11c90bjsn91205c5e87a8',
-          'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-        }
-      };
-      
-      fetch('https://free-to-play-games-database.p.rapidapi.com/api/games', options)
-        .then(response => response.json())
-        .then(data => {setGames(data); setLoading(false);})
-        .catch(err => console.error(err));
-    },2000)
-    
+
+            
+      fetch(`https://fakestoreapi.com/products/${id}`)
+      .then((response) => response.json())
+      .then((response) => setProducts(response))
+      .catch((err) => console.error(err));
+
         
-  
-    },[]) 
+    },[id]) 
+    console.log(products)
 
 
   return (
     <div className='Cards-ContainerDetail'>
-      < ItemDetail games= {games} loading= {loading}/>
+      <ItemDetail products= {products}/>
       </div>
   )
 }

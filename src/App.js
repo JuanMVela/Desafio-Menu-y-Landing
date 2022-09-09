@@ -1,10 +1,22 @@
 import React from 'react';
 import './App.css';
 
+// REACT ROUTER DOM 
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+
+// VIEWS
+import Home from "./views/Home";
+import Contact from "./views/Contact";
+import About from "./views/About";
+
+
 // COMPONENTES
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+
 import NavBar from './components/NavBar/NavBar';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+
+
+
 
 
 
@@ -12,15 +24,18 @@ function App (){
   
   return(
       
-      
-    <div className='App'>
-      <NavBar/>
-      <ItemListContainer/>
-      <h1>Desafio - Item Detail</h1>
-      <ItemDetailContainer/>
-    
-    </div>
-    
+    <Router>
+     <div className='App'>      
+       <NavBar/>    
+        <Routes>
+           <Route path= "/" element = {<Home/>}/>    
+           <Route path= "/About" element = {<About/>}/>    
+           <Route path= "/Contact" element = {<Contact/>}/>
+           <Route path= "/Contact" element = {<Contact/>}/>
+           <Route path= "/detail/:id" element = {<ItemDetailContainer/>}/>
+        </Routes>
+     </div>     
+     </Router>
   )
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import "./ItemListContainer.css"
 
 // COMPONENTES
@@ -6,24 +6,36 @@ import Title from '../Title/Title';
 import ItemList from '../ItemList/ItemList';
 
 
-
-
 const ItemListContainer = () => {
+
+
+  const[products, setProducts] = useState([]);
+  const[loading, setLoading] = useState(true);
+
+    
+    useEffect(() => {
+
+      setTimeout (() => {
+          
+      fetch('https://fakestoreapi.com/products')
+        .then(response => response.json())
+        .then(data => {setProducts(data); setLoading(false);})
+        .catch(err => console.error(err));
+    },2000)
+    
+        
+  
+    },[]) 
+  
   return (
     <div>
       <Title greeting="Ema"/>
      <div className='Cards-Container'>
-      < ItemList />
+      < ItemList products= {products} loading= {loading}/>
       </div>
       
-    </div>
-    
-    
-    
-    
-   
-    
-    
+    </div>    
+      
   )
 }
 
