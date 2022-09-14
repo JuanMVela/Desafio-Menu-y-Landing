@@ -1,26 +1,42 @@
 import React from 'react';
 import './App.css';
 
-// COMPONENTES
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import NavBar from './components/NavBar/NavBar';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+// REACT ROUTER DOM 
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
+// VIEWS
+import Home from "./views/Home";
+import Contact from "./views/Contact";
+import About from "./views/About";
+
+
+
+// COMPONENTES
+// import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import NavBar from './components/NavBar/NavBar';
+import Header from './components/Header/Header';
+
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import Cart from './views/Cart';
 
 
 function App (){
   
   return(
       
-      
-    <div className='App'>
-      <NavBar/>
-      <ItemListContainer/>
-      <h1>Desafio - Item Detail</h1>
-      <ItemDetailContainer/>
-    
-    </div>
-    
+    <Router>
+     <div className='App'>
+      <Header/>
+       <NavBar/>    
+        <Routes>
+           <Route path= "/" element = {<Home/>}/>
+           <Route path= "/cart" element = {<Cart/>}/>    
+           <Route path= "/About" element = {<About/>}/>    
+           <Route path= "/Contact" element = {<Contact/>}/>
+           <Route path= "/Detail/:id" element = {<ItemDetailContainer/>}/>
+        </Routes>    
+     </div>     
+     </Router>
   )
 }
 

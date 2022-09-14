@@ -1,6 +1,7 @@
 .App {
 	font-family: sans-serif;
-	text-align: center;	
+	text-align: center;
+	color: black;
   }
 
 .UserSection {
@@ -12,6 +13,7 @@
 
 .CounterSection {
 	display: flex;
+	color: white;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -39,4 +41,6 @@
 	margin: 2px;
 	/* border: 2px solid white; */
 }
+
+
 

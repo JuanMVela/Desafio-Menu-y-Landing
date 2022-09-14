@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const ItemCounts = () => {  
+const ItemCounts = ({bolean, name}) => {  
    
     const [counter, setCounter] = React.useState (0);
 
@@ -23,13 +23,18 @@ const ItemCounts = () => {
 }
 
     const onAdd = () => {      
-    alert(`se agrego  ${counter}`)
-    console.log(`se agrego  ${counter}`)               
+    alert(`se agrego  ${counter} / ${name}`)
+    console.log(`se agrego  ${counter} / ${name}`)
+    bolean(false)               
     }  
 
     const agregarCantidad = () => {        
-    onAdd(counter)               
+    onAdd(counter, name)                
     }  
+
+
+
+    
 
         return (
     
@@ -38,7 +43,7 @@ const ItemCounts = () => {
              <div className="btn-section">
               <button className='btn' onClick={aumentar}> + </button>
               <button className='btn' onClick={restar}> - </button>
-              <button className='btn' onClick={agregarCantidad}> agregar </button>
+              <button className='btn' onClick={agregarCantidad}> agregar </button>              
              </div>          
         </div>           
              

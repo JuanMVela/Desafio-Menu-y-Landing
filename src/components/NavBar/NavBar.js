@@ -1,5 +1,7 @@
 import React from 'react';
 import './NavBar.css';
+import {Link} from "react-router-dom";
+
 
 // COMPONENTES
 import CardWidget from "../CardWidget/CardWidget"
@@ -9,26 +11,13 @@ import CardWidget from "../CardWidget/CardWidget"
 const NavBar = () => {
   return (
     <nav className=''>
-        <div className=''>
-           
+        <div className=''>          
         </div>        
         <ul className='menu'>            
-            <li>
-                <a className='' href='#'>Indumentaria</a>
-            </li>
-            <li>
-                <a className='' href='#'>Figuras</a>
-            </li>
-            <li>
-                <a className='' href='#'>Posters</a>
-            </li>
-            <li>
-                <a className='' href='#'>Accesorios</a>
-            </li>
-            <li>
-                <a className='' href='#'><CardWidget/></a>
-            </li>
-            
+            <Link to="/"className='Link'>Home</Link>
+            <Link to="/About"className='Link'>About</Link>
+            <Link to="/Contact"className='Link'>Contacto</Link>         
+            <Link to="/cart"className='Link'><CardWidget/></Link>           
         </ul>
     </nav>
   )
