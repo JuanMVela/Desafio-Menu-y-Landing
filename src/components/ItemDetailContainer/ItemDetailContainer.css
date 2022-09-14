@@ -1,0 +1,14 @@
+.Cards-ContainerDetail {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin-top: 20px;
+	justify-content: center;
+	background: rgb(2,0,36);
+  background-color: rgb(79, 79, 79);
+
+}
+
+.DetalleLink{	  
+	text-decoration: none;	
+  }

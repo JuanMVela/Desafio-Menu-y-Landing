@@ -1,27 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 // COMPONENTES
 import Item from '../Item/Item';
+import './ItemList.css'
 
 
-const ItemList = ({games,loading}) => {
+const ItemList = ({products, loading}) => {
 
 
-  const array = games.splice(0,6);
+  
   return(
-  <div>{loading}
-    
-  {array.map((games) => {
-    return <Item
-     key={games.id}
-     data={games.title}
-     img={games.thumbnail}
-     description={games.short_description}
-     plataform={games.platform}/>;
-    })}
-    </div>)
-      
+  <div className='CardsCn'>
+     {loading}    
+  {products.map((prod) => {return <Link to={`/Detail/${prod.id}`} className='DetalleLink'>
+<Item key={prod.id} data={prod}/>
+            </Link> ; })}
+    </div>
+    )      
 }
 
 export default ItemList

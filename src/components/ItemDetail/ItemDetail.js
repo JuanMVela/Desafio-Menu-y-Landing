@@ -1,19 +1,26 @@
-import * as React from 'react';
+import {useState} from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import './Item.css'
 
 
+// COMPONENTES
+import ItemCounts from '../ItemCounts/ItemCounts'
+import { Link } from 'react-router-dom';
 
-const Item = ({ data }) => {
-  return (
+
+const ItemDetail = ({data}) => { 
+  
+  const [buy, setBuy] = useState(true);
+
+  
+  return(    
     <Card sx={{ maxWidth: 340, maxHeight: 500, margin: 2}}>
       <CardMedia
         component="img"
-        alt="Articulo"
+        alt="dataiculo"
         height="100"
         image={data.image}
       />
@@ -26,11 +33,18 @@ const Item = ({ data }) => {
         </Typography>
       </CardContent>
       <CardActions className='card'>
-        <p>${data.price}</p>              
-      </CardActions>     
+        <p>${data.price}</p>
+                    
+      </CardActions>
+      {buy ? <ItemCounts name={data.title} bolean={setBuy}/> :  <CardActions className='card'>
+      <Link to={"/cart"}><button className='btn'>ir a carrito </button></Link>       
+                    
+      </CardActions>}
+     
+           
     </Card>
-
   );
+    
 }
 
-export default Item
+export default ItemDetail;
