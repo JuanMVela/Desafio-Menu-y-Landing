@@ -1,40 +1,35 @@
-import React, {useState, useEffect} from 'react';
-import "./ItemListContainer.css"
-
-// COMPONENTES
-import Title from '../Title/Title';
-import ItemList from '../ItemList/ItemList';
+import React, {useState, useEffect} from 'react'
+import Spinner from '../Spinner/Spinner';
+import ItemList from './ItemList/ItemList';
 
 
-const ItemListContainer = () => {
+const ItemListContainer = ({greeting}) => {
+  const [game, usegame] = useState([]);
+  const[isLoading, setIsLoading] = useState(false)
 
-
-  const[products, setProducts] = useState([]);
-  const[loading, setLoading] = useState(true);
-
-    
-    useEffect(() => {
-              
-      fetch('https://fakestoreapi.com/products')
-        .then(response => response.json())
-        .then(data => {setProducts(data); setLoading(false);})
-        .catch(err => console.error(err));
-    
-    
+  useEffect(()=>{
+    setIsLoading(true) 
+        fetch("https://fakestoreapi.com/products")
+        .then((response) => response.json())
+        .then((response) => usegame(response))
+        .catch((err) => console.error(err));
+      }, []);
+      setTimeout(()=>{            
+        setIsLoading(false)
+      },2000)
         
-  
-    },[]) 
-  
+      console.log(game)
   return (
     <div>
-      <Title greeting="Ema"/>
-     <div className='Cards-Container'>
-      < ItemList products= {products} loading= {loading}/>
-      </div>
-      
-    </div>    
-      
-  )
+      <h2 className='text-4xl text-center ml-4 underline font-serif'>{greeting}</h2>
+      <div>
+        {
+          isLoading ? <Spinner/> : 
+            <ItemList game={game}/>
+        }
+    </div>
+    </div>
+    )
 }
 
-export default ItemListContainer;
+export default ItemListContainer

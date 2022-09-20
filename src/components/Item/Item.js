@@ -1,36 +1,30 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import './Item.css'
+import React from 'react'
 
+const item = ({data}) => {
 
-
-const Item = ({ data }) => {
   return (
-    <Card sx={{ maxWidth: 340, maxHeight: 500, margin: 2}}>
-      <CardMedia
-        component="img"
-        alt="Articulo"
-        height="100"
-        image={data.image}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div" className='cardtitle'>
-          {data.title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {data.description}
-        </Typography>
-      </CardContent>
-      <CardActions className='card'>
-        <p>${data.price}</p>              
-      </CardActions>     
-    </Card>
-
-  );
+    <div className="max-w-2xl m-auto my-2 ">
+        <div className="max-w-2xl m-auto my-2 shadow-xl">
+          <div class=" bg-gray-100 flex justify-center items-center">
+  <div class="container flex justify-center">
+    <div class="max-w-sm">
+      <div class="bg-white relative  hover:shadow-xl transition duration-500 rounded-lg">
+        <img class="rounded-t-lg h-96 w-auto"  src={data.image} alt="" />
+        <div class="py-6 px-8 rounded-lg bg-white">
+          <h1 class="text-gray-700 font-bold text-2xl mb-3 w-96 hover:text-gray-900 hover:cursor-pointer">{data.title}</h1>
+          <p class="text-gray-700 tracking-wide">{data.category}</p>
+          <button class="mt-6 py-2 px-4 bg-[#6e5cec] text-gray-800 font-bold rounded-lg  hover:shadow-lg transition duration-300">Buy Now</button>
+        </div>
+        <div class="absolute top-2 right-2 py-2 px-4 bg-white rounded-lg">
+          <span class="text-md">${data.price}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+        </div>
+  )
 }
 
-export default Item
+export default item

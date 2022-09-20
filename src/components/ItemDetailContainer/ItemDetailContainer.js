@@ -1,35 +1,30 @@
-import React, {useState, useEffect} from 'react';
-import "./ItemDetailContainer.css"
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
 
-
-// COMPONENTES
-
+//import params para id
+import { useParams } from "react-router"
 import ItemDetail from '../ItemDetail/ItemDetail';
 
+const Detail = () => {
+const [detail, usedetail] = useState([])
 
-const ItemDetailContainer = () => {
+let {id} = useParams()
+console.log(id)
 
-  const[art, setArticle] = useState([]);
+useEffect(()=>{
+  
+  
+  fetch(`https://fakestoreapi.com/products/${id}`)
+  .then((response) => response.json())
+  .then((response) => usedetail(response))
+  .catch((err) => console.error(err));
+},[id])
+console.log(detail)
 
-  let { id } = useParams();
-
-
-  useEffect(() => {
-                 
-    fetch(`https://fakestoreapi.com/products/${id}`)
-      .then(response => response.json())
-      .then(data => setArticle(data))
-      .catch(err => console.error(err));   
-      
-  },[id]);
-
-  console.log(art)
-
-  return(
-    <div><ItemDetail data={art}/></div>
+  return (
+    <div>
+      <ItemDetail data={detail} stock={5} />
+    </div>
   )
-} 
+}
 
-export default ItemDetailContainer;
-
+export default Detail

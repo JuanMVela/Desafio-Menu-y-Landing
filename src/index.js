@@ -11,28 +11,7 @@ root.render(
   </React.StrictMode>
 );
 
-
-//     fetch('https://jsonplaceholder.typicode.com/todos/1')
-//   .then(response => response.json())
-//   .then(json => console.log(json))
-
-
-// fetch('https://jsonplaceholder.typicode.com/users')
-// .then(response => response.json())
-// .then(data => console.log(data))
-
-
-
-// const items = [
-//   {name: "bici", precio: 500},
-//   {name: "moto", precio: 800}
-// ];
-
-// const itemsNames = items.map((item) =>{
-  
-//   return `Nombre: ${item.name} - Precio:${item.precio}`;
-// })
-
-// console.log(itemsNames)
-
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 

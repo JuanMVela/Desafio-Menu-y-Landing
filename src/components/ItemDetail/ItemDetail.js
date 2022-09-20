@@ -1,50 +1,53 @@
-import {useState} from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { useCartContext } from '../../CartContex'
+import ItemCount from '../ItemCount/ItemCount'
 
 
-// COMPONENTES
-import ItemCounts from '../ItemCounts/ItemCounts'
-import { Link } from 'react-router-dom';
-
-
-const ItemDetail = ({data}) => { 
-  
-  const [buy, setBuy] = useState(true);
-
-  
-  return(    
-    <Card sx={{ maxWidth: 340, maxHeight: 500, margin: 2}}>
-      <CardMedia
-        component="img"
-        alt="dataiculo"
-        height="100"
-        image={data.image}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div" className='cardtitle'>
-          {data.title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {data.description}
-        </Typography>
-      </CardContent>
-      <CardActions className='card'>
-        <p>${data.price}</p>
-                    
-      </CardActions>
-      {buy ? <ItemCounts name={data.title} bolean={setBuy}/> :  <CardActions className='card'>
-      <Link to={"/cart"}><button className='btn'>ir a carrito </button></Link>       
-                    
-      </CardActions>}
-     
-           
-    </Card>
-  );
-    
+const ItemDetail = ({data, stock}) => {
+  const { addProduct } = useCartContext();
+  const [buy, setBuy] = useState(false);
+  const handleOnAdd = (quantity) => {
+    alert(`Se agrego: ${quantity}  ${data.title}`);
+    setBuy(true);
+    addProduct(data ,quantity)
+  };
+    return (
+    <section className="text-gray-700 body-font overflow-hidden bg-white">
+    <div className="container px-5 py-24 mx-auto">
+    <div className="lg:w-4/5 mx-auto flex flex-wrap">
+        <img alt="ecommerce" className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src={data.image}/>
+        <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+        <h2 className="text-sm title-font text-gray-500 tracking-widest">{data.category}</h2>
+        <h1 class="text-gray-700 font-bold text-2xl mb-3 w-96 hover:text-gray-900 hover:cursor-pointer">{data.title}</h1>
+        <div className="flex mb-4">
+        </div>
+        <p className="leading-relaxed">{data.description}</p>
+        <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
+            <div className="flex ml-6 items-center">
+            {buy ? (
+            <Link to={`/cart`}>
+              <button className="py-4 px-6 mb-3 mx-auto shadow-lg shadow-slate-500/50 bg-[#6f5cef] text-white rounded hover:bg-[#5941f2] active:bg-sky-300 disabled:opacity-50  flex items-center justify-center">
+                Ir a Pagar
+              </button>
+            </Link>
+          ) : (
+            <ItemCount stock={stock} onAdd={handleOnAdd} />
+          )}
+            
+            <div className="relative">
+                <div className='flex ml-72'>
+                <span className="title-font font-medium text-2xl text-gray-900">Price: ${data.price}</span>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</section>
+)
 }
 
-export default ItemDetail;
+export default ItemDetail
