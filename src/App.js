@@ -20,7 +20,7 @@ function App() {
   <CartProvider>
 <div >
       <NavBar/>
-    <div className='flex flex-wrap '>
+    <div className='flex flex-wrap'>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/contact' element={<Contact/>}/>

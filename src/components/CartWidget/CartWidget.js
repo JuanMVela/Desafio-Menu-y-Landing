@@ -1,10 +1,30 @@
-import React from 'react'
-import carrito from "../Assets/icons/carro-de-la-compra.png"
+import React from "react";
+import { useCartContext } from "../../CartContex";
+import { Link } from "react-router-dom";
 
-const CartWidget = () => {
+const CardWidget = () => {
+  const { cart } = useCartContext();
+  const quantity = cart.map((product) => {
+    return product.quantity;
+  });
+  const total = quantity.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+    0
+  );
   return (
-      <img className='h-10 w-10' src={carrito} alt="carrito"/>
-  )
-}
+    <Link to={`/cart`}>
+    <div>
+      {total > 0 ? (
+        <div className=" flex w-16 mt-4 px-2 py-2 leading-none border rounded-xl shadow-lg transition ease-in-out delay-150 duration-300  bg-slate-300 border-white hover:border-transparent hover:bg-slate-400 lg:mt-0">
+          <i className="bi bi-cart3"></i>
+        <p className="text-black p-1 ml-1 font-light">{total}</p>
+      </div>
+      ) : (
+        <div></div>
+      )}
+    </div>
+    </Link>
+  );
+};
 
-export default CartWidget
+export default CardWidget;

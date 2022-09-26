@@ -36,7 +36,7 @@ const ItemDetail = ({data, stock}) => {
             <ItemCount stock={stock} onAdd={handleOnAdd} />
           )}
             
-            <div className="relative">
+            <div className="relative"> 
                 <div className='flex ml-72'>
                 <span className="title-font font-medium text-2xl text-gray-900">Price: ${data.price}</span>
                 </div>

@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import Spinner from '../Spinner/Spinner';
-import ItemList from './ItemList/ItemList';
+import ItemList from '../ItemList/ItemList';
+
+// import { collection, query, where, getDocs } from "firebase/firestore";
+// import { db } from '../../Firebase/FirebaseConfig';
 
 
 const ItemListContainer = ({greeting}) => {
