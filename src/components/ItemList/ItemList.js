@@ -1,8 +1,6 @@
 
 import React from 'react'
 import Item from '../Item/Item';
-// import { collection, query, where, getDocs } from "firebase/firestore";
-// import { db } from '../../Firebase/FirebaseConfig';
 
 //Link react-router-dom
 import { Link } from "react-router-dom"

@@ -2,6 +2,7 @@ import {initializeApp} from 'firebase/app'
 import {getFirestore} from 'firebase/firestore'
 
 const FirebaseConfig = {
+  
   apiKey: "AIzaSyAYeaSA_wx0i---eNzmGFWMDoh-vGaeDTQ",
   authDomain: "e-valorant-caa0c.firebaseapp.com",
   projectId: "e-valorant-caa0c",

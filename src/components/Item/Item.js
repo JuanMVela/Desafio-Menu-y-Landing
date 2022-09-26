@@ -9,7 +9,7 @@ const item = ({data}) => {
   <div class="container flex justify-center">
     <div class="max-w-sm">
       <div class="bg-white relative  hover:shadow-xl transition duration-500 rounded-lg">
-        <img class="rounded-t-lg h-96 w-auto"  src={data.image} alt="" />
+        <img class="rounded-t-lg h-96 w-auto"  src={data.img} alt="" />
         <div class="py-6 px-8 rounded-lg bg-white">
           <h1 class="text-gray-700 font-bold text-xl mb-3 w-96 hover:text-red-900 hover:cursor-pointer">{data.title}</h1>
           <p class="text-gray-700 tracking-wide">{data.category}</p>
