@@ -7,7 +7,7 @@ const ItemCart = ({product}) => {
 	<ul class="flex flex-col divide-y divide-gray-700">
 		<li class="flex flex-col py-6 sm:flex-row sm:justify-between">
 			<div class="flex w-full space-x-4 sm:space-x-4">
-				<img class="flex-shrink-0  w-60 h-20 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500" src={product.image} alt="Polaroid camera"/>
+				<img class="flex-shrink-0  w-60 h-20 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500" src={product.img} alt="Polaroid camera"/>
 				<div class="flex flex-col justify-between w-full pb-4">
 					<div class="flex justify-between w-full pb-2 space-x-2">
 						<div class="space-y-1">

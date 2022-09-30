@@ -12,8 +12,6 @@ import CartProvider from './CartContex';
 
 
 
-
-
 function App() {
     return (
 <Router>
@@ -26,15 +24,12 @@ function App() {
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/pcgame' element={<PcGame/>}/>
         <Route path='/cart' element={<Cart/>}/>
-        <Route path='/detail/:id' element={<ItemDetailContainer/>}/>
-      </Routes>
-
-      </div>
-    </div>
+        <Route path='/detail/:id' element={<ItemDetailContainer/>}/>       
+      </Routes>        
+      </div>      
+    </div>    
     </CartProvider>
-</Router>
-    
-
+</Router>  
   );
 }
 

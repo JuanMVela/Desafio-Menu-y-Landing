@@ -15,13 +15,13 @@ const CardWidget = () => {
     <Link to={`/cart`}>
     <div>
       {total > 0 ? (
-        <div className=" flex w-16 mt-4 px-2 py-2 leading-none border rounded-xl shadow-lg transition ease-in-out delay-150 duration-300  bg-slate-300 border-white hover:border-transparent hover:bg-slate-400 lg:mt-0">
+        <div className=" flex w-16 h-16 mt-4 px-2 py-2 ">
           <i className="bi bi-cart3"></i>
-        <p className="text-black p-1 ml-1 font-light">{total}</p>
+        <p className="text-xl block mt-4 pl-1 ml-1 lg:inline-block lg:mt-0 text-gray-50 hover:text-black">{total}</p>
       </div>
       ) : (
-        <div></div>
-      )}
+        <div><i className="bi bi-cart3"></i></div>
+      )} 
     </div>
     </Link>
   );
