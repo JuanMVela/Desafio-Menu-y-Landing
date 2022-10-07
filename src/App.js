@@ -1,35 +1,39 @@
-import './App.css';
-import NavBar from './components/NavBar/NavBar';
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import "./App.css";
+import NavBar from "./components/NavBar/NavBar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //viws
-import Home from './views/Home/Home';
-import Contact from './views/Contact/Contact';
-import PcGame from "./views/PcGame/PcGame"
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Cart from './views/Cart/Cart';
-import CartProvider from './CartContex';
-
-
+import Home from "./views/Home/Home";
+import Contact from "./views/Contact/Contact";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Category from "./views/Category/Category";
+import Cart from "./views/Cart/Cart";
+import CartProvider from "./CartContex";
+import Shop from "./views/Shop/Shop";
+import Prueba from "./components/Prueba/Prueba";
 
 function App() {
-    return (
-<Router>
-  <CartProvider>
-<div >
-      <NavBar/>
-    <div className='flex flex-wrap'>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/contact' element={<Contact/>}/>
-        <Route path='/pcgame' element={<PcGame/>}/>
-        <Route path='/cart' element={<Cart/>}/>
-        <Route path='/detail/:id' element={<ItemDetailContainer/>}/>       
-      </Routes>        
-      </div>      
-    </div>    
-    </CartProvider>
-</Router>  
+  return (
+    <Router>
+      <CartProvider>
+        <div>
+          <NavBar />
+          <div className="flex flex-wrap">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/detail/:id" element={<ItemDetailContainer />} />
+              <Route path="/category/:category" element={<Category />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/Shop" element={<Shop />} />
+            </Routes>
+          </div>
+          <div>
+            <Prueba />
+          </div>
+        </div>
+      </CartProvider>
+    </Router>
   );
 }
 
